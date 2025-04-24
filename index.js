@@ -9,41 +9,13 @@ const preinscriptionRoutes = require('./routes/preinscription.routes');
 
 app.use(cors());
 app.use(express.json());
-app.post('/preinscription', (req, res) => {
-    const {
-      nom,
-      prenom,
-      email,
-      telephone,
-      lettre_demande,
-      photo_url,
-      certificat_url,
-      carte_identite_url
-    } = req.body;
-  
-    const sql = `
-      INSERT INTO preinscriptions 
-      (nom, prenom, email, telephone, lettre_demande, photo_url, certificat_url, carte_identite_url) 
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
-  
-    db.query(
-      sql,
-      [nom, prenom, email, telephone, lettre_demande, photo_url, certificat_url, carte_identite_url],
-      (err, result) => {
-        if (err) {
-          console.error('Erreur lors de l\'insertion 🧨:', err);
-          return res.status(500).json({ message: 'Erreur serveur 😢' });
-        }
-        res.status(201).json({ message: 'Préinscription enregistrée 🎉', id: result.insertId });
-      }
-    );
-  });
-  
 
 app.use('/preinscriptions', preinscriptionRoutes);
 
 app.get('/', (req, res) => {
-  res.send('Service d’inscription en ligne 📚🚀');
+  res.send(
+    '<h1>Bienvenue sur l\'API de préinscription !</h1><p>Utilisez les routes définies pour interagir avec l\'API.</p>'
+  );
 });
 
 app.listen(PORT, () => {
