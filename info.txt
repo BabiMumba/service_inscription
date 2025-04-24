@@ -1,0 +1,3 @@
+password: Babistone@243
+user: u722674332_babi
+dbname: u722674332_serviceinscrip
