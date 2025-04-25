@@ -317,7 +317,8 @@ app.get('/', (req, res) => {
       <header>
         <div class="container">
           <div class="header-content">
-            <h1>API de Préinscription</h1>
+            <h1>Université Don Bosco de Lubumbashi</h1>
+            <h2>API de Préinscription et Gestion de Cote</h2>
             <p class="subtitle">Une API complète pour gérer les préinscriptions, tests, résultats et paiements des étudiants</p>
             <div class="btn-group">
               <a href="/api-docs" class="btn">Documentation API</a>
@@ -520,8 +521,7 @@ const swaggerOptions = {
 
 // Initialiser Swagger avec les options définies
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
-const CSS_URL = "https://cdn.jsdelivr.net/npm/swagger-ui-dist@3/swagger-ui.css"
-
+const CSS_URL = "https://cdn.jsdelivr.net/npm/swagger-ui-dist@latest/swagger-ui.css";
 
 // Utiliser swagger-ui-express pour exposer la documentation Swagger à /api-docs
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs, {
