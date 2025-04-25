@@ -208,9 +208,6 @@ app.get('/', (req, res) => {
         .endpoint {
           padding: 20px;
           border-bottom: 1px solid #eee;
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
         }
         
         .endpoint:last-child {
@@ -223,7 +220,6 @@ app.get('/', (req, res) => {
           border-radius: 5px;
           font-weight: 500;
           margin-right: 10px;
-          white-space: nowrap;
         }
         
         .method-get {
@@ -249,17 +245,11 @@ app.get('/', (req, res) => {
         .endpoint-path {
           font-family: monospace;
           font-size: 1.1rem;
-          margin-right: 15px;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          max-width: 300px;
         }
         
         .endpoint-description {
           margin-top: 10px;
           color: var(--secondary-color);
-          width: 100%;
         }
         
         footer {
@@ -279,8 +269,6 @@ app.get('/', (req, res) => {
           display: flex;
           gap: 20px;
           margin: 20px 0;
-          flex-wrap: wrap;
-          justify-content: center;
         }
         
         .footer-links a {
@@ -321,24 +309,6 @@ app.get('/', (req, res) => {
             width: 100%;
             max-width: 300px;
             text-align: center;
-          }
-          
-          .endpoint {
-            flex-direction: column;
-            align-items: flex-start;
-          }
-          
-          .endpoint-method {
-            margin-bottom: 5px;
-          }
-          
-          .endpoint-path {
-            margin-bottom: 5px;
-            max-width: 100%;
-          }
-          
-          .endpoint-description {
-            margin-top: 5px;
           }
         }
       </style>
@@ -550,7 +520,9 @@ const swaggerOptions = {
 
 // Initialiser Swagger avec les options définies
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
-const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css"
+const CSS_URL = "https://cdn.jsdelivr.net/npm/swagger-ui-dist@3/swagger-ui.css"
+
+
 // Utiliser swagger-ui-express pour exposer la documentation Swagger à /api-docs
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs, {
   explorer: true,
