@@ -6,11 +6,20 @@ const db = require('./database/db');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const preinscriptionRoutes = require('./routes/preinscription.routes');
+const resultatRoutes = require('./routes/resultat.routes');
+const paiementRoutes = require('./routes/paiement.routes');
+const confirmationRoutes = require('./routes/confirmation.routes');
+const testRoutes = require('./routes/test.routes');
 
 app.use(cors());
 app.use(express.json());
 
 app.use('/preinscriptions', preinscriptionRoutes);
+app.use('/resultats', resultatRoutes);
+app.use('/paiements', paiementRoutes);
+app.use('/confirmations', confirmationRoutes);
+app.use('/tests', testRoutes);
+
 
 app.get('/', (req, res) => {
   res.send(
