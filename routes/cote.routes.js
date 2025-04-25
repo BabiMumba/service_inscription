@@ -1,14 +1,15 @@
+// routes/cote.routes.js
 const express = require('express');
 const router = express.Router();
-const confirmationController = require('../controllers/confirmation.controller');
+const coteController = require('../controllers/cote.controller');
 
 /**
  * @swagger
- * /confirmations:
+ * /cotes:
  *   post:
- *     summary: Confirmer une admission
- *     description: Permet de confirmer l'admission d'un étudiant
- *     tags: [Confirmations]
+ *     summary: Ajouter une cote
+ *     description: Permet d'ajouter une nouvelle cote pour un étudiant
+ *     tags: [Cotes]
  *     security:
  *       - bearerAuth: []
  *     requestBody:
@@ -19,24 +20,27 @@ const confirmationController = require('../controllers/confirmation.controller')
  *             type: object
  *             required:
  *               - preinscription_id
- *               - resultat_id
+ *               - matiere
+ *               - note
  *             properties:
  *               preinscription_id:
  *                 type: string
  *                 description: ID de la préinscription de l'étudiant
- *               resultat_id:
+ *               matiere:
  *                 type: string
- *                 description: ID du résultat d'admission
- *               date_confirmation:
- *                 type: string
- *                 format: date-time
- *                 description: Date et heure de la confirmation
+ *                 description: Nom de la matière
+ *               note:
+ *                 type: number
+ *                 description: Note obtenue (sur 20)
+ *               coefficient:
+ *                 type: number
+ *                 description: Coefficient de la matière
  *               commentaires:
  *                 type: string
- *                 description: Commentaires sur la confirmation
+ *                 description: Commentaires sur la note
  *     responses:
  *       201:
- *         description: Admission confirmée avec succès
+ *         description: Cote ajoutée avec succès
  *         content:
  *           application/json:
  *             schema:
@@ -44,7 +48,7 @@ const confirmationController = require('../controllers/confirmation.controller')
  *               properties:
  *                 message:
  *                   type: string
- *                   example: Admission confirmée avec succès
+ *                   example: Cote ajoutée avec succès
  *                 data:
  *                   type: object
  *                   properties:
@@ -52,10 +56,12 @@ const confirmationController = require('../controllers/confirmation.controller')
  *                       type: string
  *                     preinscription_id:
  *                       type: string
- *                     resultat_id:
+ *                     matiere:
  *                       type: string
- *                     date_confirmation:
- *                       type: string
+ *                     note:
+ *                       type: number
+ *                     coefficient:
+ *                       type: number
  *       400:
  *         description: Données invalides ou manquantes
  *       401:
@@ -63,20 +69,27 @@ const confirmationController = require('../controllers/confirmation.controller')
  *       500:
  *         description: Erreur serveur
  */
-router.post('/', confirmationController.confirmerAdmission);
+router.post('/', coteController.ajouterCote);
 
 /**
  * @swagger
- * /confirmations:
+ * /cotes/{preinscription_id}:
  *   get:
- *     summary: Obtenir toutes les confirmations
- *     description: Récupère la liste de toutes les confirmations d'admission
- *     tags: [Confirmations]
+ *     summary: Lister les cotes d'un étudiant
+ *     description: Récupère toutes les cotes d'un étudiant spécifique
+ *     tags: [Cotes]
  *     security:
  *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: preinscription_id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: ID de la préinscription de l'étudiant
  *     responses:
  *       200:
- *         description: Liste des confirmations récupérée avec succès
+ *         description: Liste des cotes récupérée avec succès
  *         content:
  *           application/json:
  *             schema:
@@ -86,17 +99,21 @@ router.post('/', confirmationController.confirmerAdmission);
  *                 properties:
  *                   id:
  *                     type: string
- *                   preinscription_id:
+ *                   matiere:
  *                     type: string
- *                   resultat_id:
- *                     type: string
- *                   date_confirmation:
+ *                   note:
+ *                     type: number
+ *                   coefficient:
+ *                     type: number
+ *                   date_ajout:
  *                     type: string
  *       401:
  *         description: Non autorisé - Token JWT invalide ou manquant
+ *       404:
+ *         description: Étudiant non trouvé
  *       500:
  *         description: Erreur serveur
  */
-router.get('/', confirmationController.getAllConfirmations);
+router.get('/:preinscription_id', coteController.listerCotes);
 
 module.exports = router;
