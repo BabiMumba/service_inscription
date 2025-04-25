@@ -133,16 +133,16 @@ Content-Type: application/json
 }
 ```
 
-## Déploiement
+## *Déploiement*
 
-Le projet est configuré pour être déployé sur Vercel. Pour déployer :
+*Le projet est configuré pour être déployé sur Vercel. Pour déployer :*
 
-1. Créez un compte sur [Vercel](https://vercel.com)
-2. Connectez votre dépôt GitHub
-3. Configurez les variables d'environnement dans les paramètres du projet Vercel
-4. Déployez
+1. *Créez un compte sur [Vercel](https://vercel.com).*
+2. *Connectez votre dépôt GitHub.*
+3. *Configurez les variables d'environnement dans les paramètres du projet Vercel.*
+4. *Déployez.*
 
-## Structure du Projet
+## *Structure du Projet*
 
 ```
 service-inscription/
@@ -158,7 +158,7 @@ service-inscription/
 
 ## Contribution
 
-Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou à soumettre une pull request.
+*Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou à soumettre une pull request.*
 
 ## Licence
 
@@ -166,6 +166,7 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 ## Contact
 
-Pour toute question ou suggestion, contactez :
-- Email : babimumba243@gmail.com
-- GitHub : [babimumba](https://github.com/babimumba) 
+*Pour toute question ou suggestion, contactez :*
+- *Email : babimumba243@gmail.com.*
+- *GitHub : [babimumba](https://github.com/babimumba).*
+- *Info : Projet créé dans le cadre du cours de génie logiciel de l'Université Don Bosco de Lubumbashi dispensé par Mr. Guellord Kabemba, année académique 2024-2025, déposé le 25/04/2025.*
