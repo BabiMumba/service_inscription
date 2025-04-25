@@ -520,11 +520,12 @@ const swaggerOptions = {
 
 // Initialiser Swagger avec les options définies
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
-
+const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css"
 // Utiliser swagger-ui-express pour exposer la documentation Swagger à /api-docs
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs, {
   explorer: true,
   customCss: '.swagger-ui .topbar { display: none }',
+  customCssUrl: CSS_URL,
   customSiteTitle: "API de préinscription - Documentation",
   customfavIcon: "/favicon.ico"
 }));
