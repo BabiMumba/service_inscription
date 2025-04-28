@@ -434,7 +434,7 @@ app.get('/', (req, res) => {
             <h3>API de Préinscription</h3>
             <div class="footer-links">
               <a href="/api-docs">Documentation</a>
-              <a href="https://github.com/babimumba/service-inscription">GitHub</a>
+              <a href="https://github.com/babimumba/service_inscription">GitHub</a>
               <a href="mailto:babimumba243@gmail.com">Contact</a>
             </div>
             <p class="copyright">© ${new Date().getFullYear()} Babi Mumba. Tous droits réservés.</p>
