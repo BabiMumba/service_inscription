@@ -169,4 +169,4 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 *Pour toute question ou suggestion, contactez :*
 - *Email : babimumba243@gmail.com.*
 - *GitHub : [babimumba](https://github.com/babimumba).*
-- *Info : Projet créé dans le cadre du cours de génie logiciel de l'Université Don Bosco de Lubumbashi dispensé par Mr. Guellord Kabemba, année académique 2024-2025, déposé le 25/04/2025.*
+- *Info : Projet créé dans le cadre du cours de génie logiciel de l'Université Don Bosco de Lubumbashi dispensé par CT. Guellord Kabemba, année académique 2024-2025, déposé le 25/04/2025.*

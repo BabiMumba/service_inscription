@@ -322,7 +322,7 @@ app.get('/', (req, res) => {
             <p class="subtitle">Une API complète pour gérer les préinscriptions, tests, résultats et paiements des étudiants</p>
             <div class="btn-group">
               <a href="/api-docs" class="btn">Documentation API</a>
-              <a href="https://github.com/babimumba/service-inscription" class="btn btn-outline">GitHub</a>
+              <a href="https://github.com/babimumba/service_inscription" class="btn btn-outline">GitHub</a>
             </div>
           </div>
         </div>
